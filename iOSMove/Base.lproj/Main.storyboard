@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sYq-Km-3sL">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bar View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BarViewController" customModule="iOSMove" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bar Chart de la position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q3-n6-1Vo">
+                                <rect key="frame" x="210" y="28" width="180" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ZbH-Of-BxM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0m-Gs-MFB" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Q3-n6-1Vo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="2hT-va-wiE"/>
+                            <constraint firstItem="8Q3-n6-1Vo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HRa-8R-Rkp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u0m-Gs-MFB" secondAttribute="bottom" constant="20" id="O3R-07-Zxu"/>
+                            <constraint firstItem="u0m-Gs-MFB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Og5-XA-fiS"/>
+                            <constraint firstItem="u0m-Gs-MFB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="QCc-vQ-o96"/>
+                            <constraint firstItem="u0m-Gs-MFB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fjH-En-pzL"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="TC0-xT-IjV"/>
+                    <connections>
+                        <outlet property="canvas" destination="u0m-Gs-MFB" id="y90-eu-ACG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="-441"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="FWG-oT-eDC">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sYq-Km-3sL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Yt8-Vn-Qpb">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ZY2-bS-DiN"/>
+                        <segue destination="qia-nN-AXg" kind="relationship" relationship="viewControllers" id="Cm8-Zh-8bL"/>
+                        <segue destination="hzK-zP-aC8" kind="relationship" relationship="viewControllers" id="Kkd-5Q-Sv4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Lr-mj-nbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="498" y="351"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="E3f-we-G2p">
+            <objects>
+                <viewController id="qia-nN-AXg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ubr-PB-RJP"/>
+                        <viewControllerLayoutGuide type="bottom" id="SIL-9J-YER"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qpe-jN-u3H">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="B" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46k-gU-GOh">
+                                <rect key="frame" x="252" y="285" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="46k-gU-GOh" firstAttribute="centerX" secondItem="Qpe-jN-u3H" secondAttribute="centerX" id="QVs-P1-iTw"/>
+                            <constraint firstItem="46k-gU-GOh" firstAttribute="centerY" secondItem="Qpe-jN-u3H" secondAttribute="centerY" id="qEP-we-jaa"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="xW0-Ik-522"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2v-T7-ynh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="351"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="icy-VK-utb">
+            <objects>
+                <viewController id="hzK-zP-aC8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bAb-eA-A49"/>
+                        <viewControllerLayoutGuide type="bottom" id="qnb-08-RBS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d07-e2-gHL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="C" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGA-YI-9XP">
+                                <rect key="frame" x="252" y="285" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aGA-YI-9XP" firstAttribute="centerX" secondItem="d07-e2-gHL" secondAttribute="centerX" id="5DR-fE-FYm"/>
+                            <constraint firstItem="aGA-YI-9XP" firstAttribute="centerY" secondItem="d07-e2-gHL" secondAttribute="centerY" id="m4l-pN-hkr"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="URw-2n-cLM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gsF-L8-s35" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="1274"/>
+        </scene>
+    </scenes>
+</document>
