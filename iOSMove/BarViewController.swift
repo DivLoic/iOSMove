@@ -39,9 +39,9 @@ class BarViewController: ViewController, ChartViewDelegate{
     
     func reDraw(x:Double, y:Double, z:Double) {
         let dataSet = BarChartDataSet(yVals:
-            [BarChartDataEntry(value: pow(x,2), xIndex: 0),
-                BarChartDataEntry(value: pow(y,2), xIndex: 1),
-                BarChartDataEntry(value: pow(z, 2), xIndex: 2),
+            [BarChartDataEntry(value: ceilForDisplay(x), xIndex: 0),
+                BarChartDataEntry(value: ceilForDisplay(y), xIndex: 1),
+                BarChartDataEntry(value: ceilForDisplay(z), xIndex: 2),
                 BarChartDataEntry(value: 1.0, xIndex: 3)], label: "")
         
         dataSet.colors = [
@@ -80,6 +80,10 @@ class BarViewController: ViewController, ChartViewDelegate{
         reDraw(0.1, y: 0.5, z: 0.2)
     }
     
+    
+    func ceilForDisplay(figures: Double) -> Double{
+        return pow(round(100*figures)/100,2)
+    }
     
     func probe(){
         if let datum = self.manager.accelerometerData?.acceleration {
