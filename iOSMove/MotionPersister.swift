@@ -67,7 +67,7 @@ class MotionPersister {
     
     static func quit(){
         // TODO: build a keep score in the Server side
-        let js: JSON = JSON("{\"_id\": \"\(MotionPersister.id)\", \"upsert\": false}")
+        let js: JSON = JSON("{\"\(MotionPersister.id)\": 1, \"upsert\": false}")
         Alamofire.request(.POST, MotionPersister.ksf, parameters: ["motion": "\(js)"], encoding: .JSON)
     }
     

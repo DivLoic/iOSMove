@@ -16,18 +16,12 @@ class Measure: Object{
     // TODO: Fill properties and mathods
     func ping(){}
     
-    static func intro(m: Measure, f: (label: String?, value: Any) -> ()){
+    static func intro(m: Measure, f: () -> ()){
         let mirror = Mirror(reflecting:m)
-        mirror.children.forEach(f)
-    }
-    
-    static func map(m: Measure, f: (label: String?, value: Any) -> ()) -> List{
-        var mapping: [Dictionary<String,Any>] = []
-        let mirror = Mirror(reflecting:m)
-        for child in mirror.children.enumerate(){
-            mapping.append([child.element.label!: child.element.value])
+        mirror.children.forEach { (label: String?, value: Any) -> () in
+        
         }
-        return mapping
+        
     }
     
     
