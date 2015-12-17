@@ -13,15 +13,14 @@ import SwiftyJSON
 class Measure: Object{
     
     
-    // TODO: Fill properties and mathods
-    func ping(){}
+    // TODO: Use the power of heritage by writing non static
     
     static func intro(m: Measure, f: (label: String?, value: Any) -> ()){
         let mirror = Mirror(reflecting:m)
         mirror.children.forEach(f)
     }
     
-    static func map(m: Measure, f: (label: String?, value: Any) -> ()) -> List{
+    static func map(m: Measure, f: (label: String?, value: Any) -> ()) -> [Dictionary<String,Any>]{
         var mapping: [Dictionary<String,Any>] = []
         let mirror = Mirror(reflecting:m)
         for child in mirror.children.enumerate(){

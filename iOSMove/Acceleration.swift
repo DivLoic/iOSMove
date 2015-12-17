@@ -31,6 +31,4 @@ class Acceleration: Measure{
         self.init(d: [0.0, 0.0, 0.0])
     }
     
-    override func ping(){ print("Hello, world!")}
-    
 }

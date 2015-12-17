@@ -14,15 +14,22 @@ import Charts
 
 class BarViewController: ViewController, ChartViewDelegate{
     
+    // Outlet
     @IBOutlet weak var canvas: BarChartView!
-    let backGround: UIColor = UIColor.whiteColor()
+    
+    // Configuration
+    var interval: Int = 0
+    
     var manager : CMMotionManager = CMMotionManager()
     var timer: NSTimer!
     var clock: Double = 0.0
     var db = MotionPersister()
     
+    let backGround: UIColor = UIColor.whiteColor()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        interval = self.conf["interval"] as! Int
         self.view.backgroundColor = self.backGround
         canvas.delegate = self
         initChart()
@@ -88,7 +95,7 @@ class BarViewController: ViewController, ChartViewDelegate{
     func probe(){
         if let datum = self.manager.accelerometerData?.acceleration {
             reDraw(datum.x, y: datum.y, z: datum.z)
-            if Int(clock) == 3 {
+            if Int(clock) == interval {
                 db.persite(Acceleration(acc: datum))
                 db.emit(Acceleration(acc: datum))
                 clock = 0.1

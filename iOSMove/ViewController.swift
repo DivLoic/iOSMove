@@ -10,8 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var conf: [String: NSObject] = [String: NSObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.conf = NSBundle.mainBundle().objectForInfoDictionaryKey("Actual Config") as! [String: NSObject]
         // Do any additional setup after loading the view, typically from a nib.
     }
 

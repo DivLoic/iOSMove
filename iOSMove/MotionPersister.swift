@@ -39,20 +39,17 @@ class MotionPersister {
     // TODO: Move this in class measure
     func toJson(m: Measure) -> JSON{
         var dict =  [String: Double]()
-        let mirror = Mirror(reflecting:m)
-        mirror.children.forEach { (label: String?, value: Any) -> () in
+        Measure.intro(m, f: {(label: String?, value: Any) -> () in
             let optval = String(value)
             if let key = label {
-                let v = Double(optval.substringWithRange(Range<String.Index>(
-                        start: optval.startIndex.advancedBy(9),
-                        end: optval.endIndex.advancedBy(-1))))
-                dict[key] = round(1000*v!)/1000
-
+                let val = Double(optval.substringWithRange(Range<String.Index>(
+                    start: optval.startIndex.advancedBy(9),
+                    end: optval.endIndex.advancedBy(-1))))
+                dict[key] = round(1000*val!)/1000
             }
-        }
+        })
         return JSON(dict)
     }
-    
     
     func emit(m: Measure){
         var js: JSON = toJson(m)
@@ -62,7 +59,6 @@ class MotionPersister {
         js["time"] = JSON(MotionPersister.now())
         
         Alamofire.request(.POST, MotionPersister.ksf, parameters: ["motion": "\(js)"], encoding: .JSON)
-    
     }
     
     static func quit(){
