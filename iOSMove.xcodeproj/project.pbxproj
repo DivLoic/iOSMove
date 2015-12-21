@@ -10,6 +10,7 @@
 		E70BA3AE1C1CD5BA00D8D2FB /* MotionPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3AD1C1CD5BA00D8D2FB /* MotionPersister.swift */; };
 		E70BA3B21C1CDA8900D8D2FB /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3B11C1CDA8900D8D2FB /* Acceleration.swift */; };
 		E70BA3B41C1CDAC900D8D2FB /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3B31C1CDAC900D8D2FB /* Measure.swift */; };
+		E72F86661C28AB0600F506D9 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = E72F86651C28AB0600F506D9 /* user.plist */; };
 		E73C24E91C171AE100278093 /* BarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73C24E81C171AE100278093 /* BarViewController.swift */; };
 		E76852BC1C27527F006B1A6F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76852BB1C27527F006B1A6F /* SettingsViewController.swift */; };
 		E79E62BC1C1C17DD007DCC11 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A978A11C171DE600693172 /* Charts.framework */; };
@@ -143,6 +144,7 @@
 		E70BA3AD1C1CD5BA00D8D2FB /* MotionPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionPersister.swift; sourceTree = "<group>"; };
 		E70BA3B11C1CDA8900D8D2FB /* Acceleration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acceleration.swift; sourceTree = "<group>"; };
 		E70BA3B31C1CDAC900D8D2FB /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		E72F86651C28AB0600F506D9 /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
 		E73C24E81C171AE100278093 /* BarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewController.swift; sourceTree = "<group>"; };
 		E76852BB1C27527F006B1A6F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E7A9349E1C1713AA0004BCE0 /* iOSMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +223,7 @@
 				E7A934AB1C1713AA0004BCE0 /* Assets.xcassets */,
 				E7A934AD1C1713AA0004BCE0 /* LaunchScreen.storyboard */,
 				E7A934B01C1713AA0004BCE0 /* Info.plist */,
+				E72F86651C28AB0600F506D9 /* user.plist */,
 				E7A934A81C1713AA0004BCE0 /* iOSMove.xcdatamodeld */,
 				E73C24E81C171AE100278093 /* BarViewController.swift */,
 				E70BA3AD1C1CD5BA00D8D2FB /* MotionPersister.swift */,
@@ -414,6 +417,7 @@
 				E7A934AF1C1713AA0004BCE0 /* LaunchScreen.storyboard in Resources */,
 				E7A934AC1C1713AA0004BCE0 /* Assets.xcassets in Resources */,
 				E7A934A71C1713AA0004BCE0 /* Main.storyboard in Resources */,
+				E72F86661C28AB0600F506D9 /* user.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

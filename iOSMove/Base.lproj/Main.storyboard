@@ -98,6 +98,9 @@
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KRg-Hy-K24">
                                                                 <rect key="frame" x="531" y="9" width="51" height="31"/>
+                                                                <connections>
+                                                                    <action selector="switchAction:" destination="gJ3-Lc-5VU" eventType="valueChanged" id="RAB-xF-bNC"/>
+                                                                </connections>
                                                             </switch>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,22 +115,25 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbG-zd-j2j">
                                                         <rect key="frame" x="0.0" y="50" width="600" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-KN-fv3">
-                                                                <rect key="frame" x="538" y="14" width="42" height="21"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                                <color key="textColor" red="0.51372549020000002" green="0.74117647060000003" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emission frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHc-9J-b8S">
                                                                 <rect key="frame" x="20" y="14" width="149.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="f3T-Ck-nCV">
+                                                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="f3T-Ck-nCV">
                                                                 <rect key="frame" x="187" y="10" width="332.5" height="31"/>
                                                                 <color key="tintColor" red="0.51372549020000002" green="0.74117647060000003" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <connections>
+                                                                    <action selector="slideAction:" destination="gJ3-Lc-5VU" eventType="valueChanged" id="Cbd-oO-O4W"/>
+                                                                </connections>
                                                             </slider>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-KN-fv3">
+                                                                <rect key="frame" x="538" y="14" width="42" height="21"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                <color key="textColor" red="0.51372549020000002" green="0.74117647060000003" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -292,6 +298,7 @@
                     <connections>
                         <outlet property="drop" destination="z9C-74-qjm" id="gK6-QV-ZKC"/>
                         <outlet property="hostInput" destination="PDs-Qq-1OE" id="Bx4-dI-vww"/>
+                        <outlet property="intervalLabel" destination="ehr-KN-fv3" id="b2O-sG-0sn"/>
                         <outlet property="onOff" destination="KRg-Hy-K24" id="Wng-HA-aDb"/>
                         <outlet property="reset" destination="6HP-uq-dXG" id="kzL-jG-gt4"/>
                         <outlet property="segmentAxis" destination="T7S-Uw-xXB" id="KEu-Xv-t5C"/>
