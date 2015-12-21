@@ -13,12 +13,13 @@ class SettingsViewController: ViewController{
     
     @IBOutlet var cellCollection: [UIView]!
     @IBOutlet weak var onOff: UISwitch!
-    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var slide: UISlider!
     @IBOutlet weak var hostInput: UITextField!
-    @IBOutlet weak var axisSegment: UISegmentedControl!
+    @IBOutlet weak var segmentAxis: UISegmentedControl!
     
-    @IBOutlet weak var frequency: UILabel!
-    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var reset: UIButton!
+    @IBOutlet weak var drop: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.design()
