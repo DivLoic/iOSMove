@@ -11,6 +11,8 @@ import UIKit
 
 class SettingsViewController: ViewController{
     
+    // -- IBOutlet
+    
     @IBOutlet var cellCollection: [UIView]!
     @IBOutlet weak var onOff: UISwitch!
     @IBOutlet weak var slide: UISlider!
@@ -33,6 +35,7 @@ class SettingsViewController: ViewController{
         self.design()
         self.reConfig()
         self.bindConf()
+        
     }
     
     
@@ -45,6 +48,7 @@ class SettingsViewController: ViewController{
     
     func bindConf(){
         self.onOff.setOn(confEmission, animated: false)
+        self.intervalLabel.text = "\(confInterval)s"
         self.slide.setValue(Float(confInterval), animated: false)
         self.hostInput.text = confHost
         self.segmentAxis.selectedSegmentIndex = ["X","Y","Z"].indexOf(confAxis)!
@@ -61,7 +65,7 @@ class SettingsViewController: ViewController{
     
     
     //func plistFactory() ->
-    func writehSettings(){
+    func writeSettings(){
         
     }
     
@@ -70,6 +74,10 @@ class SettingsViewController: ViewController{
     
     
     @IBAction func switchAction(sender: UISwitch) {
+        ViewController.writeBundle(sender.on, key:"emission")
+        print(sender.on)
+        reConfig()
+        print(self.confEmission)
     }
     
     @IBAction func slideAction(sender: UISlider) {

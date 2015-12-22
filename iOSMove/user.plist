@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>axis</key>
-	<string>Z</string>
+	<string>X</string>
 	<key>host</key>
-	<string>localhost</string>
+	<string>ns370799.ip-91-121-193.eu</string>
 	<key>emission</key>
-	<false/>
+	<true/>
 	<key>interval</key>
-	<integer>5</integer>
+	<integer>4</integer>
 </dict>
 </plist>
