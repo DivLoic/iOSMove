@@ -17,7 +17,6 @@ class BarViewController: ViewController, ChartViewDelegate{
     @IBOutlet weak var canvas: BarChartView!
     let backGround: UIColor = UIColor.whiteColor()
     var manager : CMMotionManager = CMMotionManager()
-    var timer: NSTimer!
     var clock: Double = 0.0
     var db = MotionPersister()
     
@@ -27,7 +26,6 @@ class BarViewController: ViewController, ChartViewDelegate{
         canvas.delegate = self
         initChart()
         self.manager.startAccelerometerUpdates()
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "probe", userInfo: nil, repeats: true)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -81,7 +79,7 @@ class BarViewController: ViewController, ChartViewDelegate{
     }
     
     
-    func probe(){
+    override func probe(){
         if let datum = self.manager.accelerometerData?.acceleration {
             reDraw(datum.x, y: datum.y, z: datum.z)
             if Int(clock) == 3 {

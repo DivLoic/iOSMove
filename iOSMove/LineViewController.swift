@@ -13,6 +13,7 @@ class LineViewController: ViewController,ChartViewDelegate{
     
     @IBOutlet weak var canvas: LineChartView!
     let backGround: UIColor = UIColor.whiteColor()
+    var vcgreen =  UIColor(red: 0.518, green: 0.600, blue: 0.243, alpha: 1.00)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,8 @@ class LineViewController: ViewController,ChartViewDelegate{
         }
 
         let dataSet = LineChartDataSet(yVals: entries, label: "position")
+        dataSet.colors = [vcgreen]
+        dataSet.circleColors = [vcgreen]
         let data = LineChartData(xVals: p, dataSet: dataSet)
         canvas.data = data
     }
@@ -42,7 +45,7 @@ class LineViewController: ViewController,ChartViewDelegate{
         canvas.getAxis(ChartYAxis.AxisDependency.Left).drawAxisLineEnabled = false
         canvas.getAxis(ChartYAxis.AxisDependency.Right).drawAxisLineEnabled = false
         canvas.getAxis(ChartYAxis.AxisDependency.Left).drawLabelsEnabled = false
-        
+
         canvas.gridBackgroundColor = self.backGround
         canvas.backgroundColor = self.backGround
     }
