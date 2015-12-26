@@ -12,10 +12,12 @@ import Charts
 class LineViewController: ViewController,ChartViewDelegate{
     
     @IBOutlet weak var canvas: LineChartView!
+    let backGround: UIColor = UIColor.whiteColor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let array  = [5.0,0.5,4.0,1.0,10.0]
+        setChart()
         drawLineChart(array)
     }
     
@@ -29,5 +31,19 @@ class LineViewController: ViewController,ChartViewDelegate{
         let dataSet = LineChartDataSet(yVals: entries, label: "position")
         let data = LineChartData(xVals: p, dataSet: dataSet)
         canvas.data = data
+    }
+    
+    func setChart(){
+        canvas.setScaleEnabled(false)
+        canvas.userInteractionEnabled = false
+        
+        canvas.xAxis.labelPosition = .Bottom
+        canvas.xAxis.drawGridLinesEnabled = false
+        canvas.getAxis(ChartYAxis.AxisDependency.Left).drawAxisLineEnabled = false
+        canvas.getAxis(ChartYAxis.AxisDependency.Right).drawAxisLineEnabled = false
+        canvas.getAxis(ChartYAxis.AxisDependency.Left).drawLabelsEnabled = false
+        
+        canvas.gridBackgroundColor = self.backGround
+        canvas.backgroundColor = self.backGround
     }
 }
