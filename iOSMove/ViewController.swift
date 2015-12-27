@@ -9,13 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var conf: NSDictionary = NSDictionary()
-    var bundle = NSBundle.mainBundle()
+    
+    var confEmission: Bool = false
+    var confInterval: Int = 0
+    var confHost: String = ""
+    var confAxis: String = ""
+    
+    var confBundle: NSDictionary = NSDictionary()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.conf = ViewController.makeBundle()//self.bundle.objectForInfoDictionaryKey("UserConfig") as! [String: NSObject]
+        refreshConf()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -24,7 +28,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    static func makeBundle() -> NSDictionary {
+    func refreshConf(){
+        self.confBundle = ViewController.loadBundle()
+        confEmission = self.confBundle["emission"] as! Bool
+        confInterval = self.confBundle["interval"] as! Int
+        confHost = self.confBundle["host"] as! String
+        confAxis = self.confBundle["axis"] as! String
+    }
+    
+    static func mainBundle()-> NSDictionary{
         var dico = NSDictionary()
         if let path = NSBundle.mainBundle().pathForResource("user", ofType: "plist"){
             dico = NSDictionary(contentsOfFile: path)!
@@ -32,15 +44,34 @@ class ViewController: UIViewController {
         return dico
     }
     
-    static func writeBundle(value: AnyObject ,key: String){
-        var dico = NSMutableDictionary()
-        if let path = NSBundle.mainBundle().pathForResource("user", ofType: "plist"){
-            dico = NSMutableDictionary(contentsOfFile: path)!
-            dico.setObject(value, forKey: key)
-            dico.writeToFile(path, atomically: false)
+    static func loadBundle() -> NSDictionary {
+        let bundle = fileConfigPath()
+        if(NSFileManager.defaultManager().fileExistsAtPath(bundle)){
+            return NSDictionary(contentsOfFile: bundle)!
+        } else {
+            if let mainpath = NSBundle.mainBundle().pathForResource("user", ofType: "plist"){
+                do{ try NSFileManager.defaultManager().copyItemAtPath(mainpath, toPath: bundle)
+                } catch { }
+            }
+            return mainBundle()
         }
     }
-
-
+    
+    static func writeBundle(value: AnyObject, key: String){
+        var dico = NSMutableDictionary()
+        let bundle = fileConfigPath()
+        if(NSFileManager.defaultManager().fileExistsAtPath(bundle)){
+            dico = NSMutableDictionary(contentsOfFile: bundle)!
+            dico.setObject(value, forKey: key)
+            dico.writeToFile(bundle, atomically: true)
+        } 
+    }
+    
+    static func fileConfigPath() -> String{
+        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let url = NSURL(string: path)
+        let bundle = url!.URLByAppendingPathComponent("user.plist").absoluteString
+        return bundle
+    }
 }
 
