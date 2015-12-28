@@ -14,7 +14,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.conf = NSBundle.mainBundle().objectForInfoDictionaryKey("Actual Config") as! [String: NSObject]
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -28,6 +27,6 @@ class ViewController: UIViewController {
     }
 
     func probe(){
-        print("hello")
+        /** do something **/
     }
 }

@@ -28,7 +28,7 @@ class BarViewController: ViewController, ChartViewDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        interval = self.conf["interval"] as! Int
+        interval = 4
         self.view.backgroundColor = self.backGround
         canvas.delegate = self
         initChart()
