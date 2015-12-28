@@ -6,7 +6,6 @@
 //  Copyright © 2015 Loïc M. DIVAD. All rights reserved.
 //
 
-
 import Foundation
 import CoreMotion
 import Darwin
@@ -36,7 +35,6 @@ class BarViewController: ViewController, ChartViewDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
     func reDraw(x:Double, y:Double, z:Double) {
         let dataSet = BarChartDataSet(yVals:

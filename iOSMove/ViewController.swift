@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     var confAxis: String = ""
 
     var confBundle: NSDictionary = NSDictionary()
+    
+    static var timer: NSTimer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +74,7 @@ class ViewController: UIViewController {
         let url = NSURL(string: path)
         let bundle = url!.URLByAppendingPathComponent("user.plist").absoluteString
         return bundle
+    }
 
     override func viewDidAppear(animated: Bool) {
         ViewController.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "probe", userInfo: nil, repeats: true)
