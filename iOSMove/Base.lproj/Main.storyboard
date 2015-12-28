@@ -350,10 +350,10 @@
             </objects>
             <point key="canvasLocation" x="498" y="351"/>
         </scene>
-        <!--View Controller-->
+        <!--Line View Controller-->
         <scene sceneID="E3f-we-G2p">
             <objects>
-                <viewController id="qia-nN-AXg" sceneMemberID="viewController">
+                <viewController id="qia-nN-AXg" customClass="LineViewController" customModule="iOSMove" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ubr-PB-RJP"/>
                         <viewControllerLayoutGuide type="bottom" id="SIL-9J-YER"/>
@@ -362,19 +362,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="B" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46k-gU-GOh">
-                                <rect key="frame" x="252" y="285" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88I-OS-2p2" userLabel="Canvas" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="158" y="121" width="317" height="218"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0e-Qk-otH">
+                                <rect key="frame" x="-20" y="0.0" width="640" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="EwP-JD-Hb0"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Line chart" id="XCd-6V-ZOW"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="46k-gU-GOh" firstAttribute="centerX" secondItem="Qpe-jN-u3H" secondAttribute="centerX" id="QVs-P1-iTw"/>
-                            <constraint firstItem="46k-gU-GOh" firstAttribute="centerY" secondItem="Qpe-jN-u3H" secondAttribute="centerY" id="qEP-we-jaa"/>
+                            <constraint firstItem="88I-OS-2p2" firstAttribute="centerX" secondItem="Qpe-jN-u3H" secondAttribute="centerX" id="7RT-w5-aqk"/>
+                            <constraint firstItem="N0e-Qk-otH" firstAttribute="top" secondItem="Ubr-PB-RJP" secondAttribute="bottom" constant="-20" id="Lwl-Hx-zFo"/>
+                            <constraint firstItem="88I-OS-2p2" firstAttribute="centerY" secondItem="Qpe-jN-u3H" secondAttribute="centerY" id="Qyj-HA-kRf"/>
+                            <constraint firstAttribute="trailing" secondItem="N0e-Qk-otH" secondAttribute="trailing" constant="-20" id="Y2E-VJ-Q7V"/>
+                            <constraint firstItem="88I-OS-2p2" firstAttribute="leading" secondItem="Qpe-jN-u3H" secondAttribute="leadingMargin" constant="20" id="ZXq-Tj-psQ"/>
+                            <constraint firstItem="SIL-9J-YER" firstAttribute="top" secondItem="88I-OS-2p2" secondAttribute="bottom" constant="20" id="kRb-6E-RqZ"/>
+                            <constraint firstItem="N0e-Qk-otH" firstAttribute="leading" secondItem="Qpe-jN-u3H" secondAttribute="leading" constant="-20" id="p0p-BJ-zes"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="xW0-Ik-522"/>
+                    <connections>
+                        <outlet property="canvas" destination="88I-OS-2p2" id="dy2-5C-5xT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2v-T7-ynh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
