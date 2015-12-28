@@ -13,39 +13,21 @@ import SwiftyJSON
 class Measure: Object{
     
     
-    // TODO: Fill properties and mathods
-    func ping(){}
+    // TODO: Use the power of heritage by writing non static
     
-    
-    
-}
-
-extension NSObject{
-    
-    func propertyNames() -> Array<String> {
-        var results: Array<String> = [];
-        
-        // retrieve the properties via the class_copyPropertyList function
-        var count: UInt32 = 0;
-        let myClass: AnyClass = self.classForCoder;
-        let properties = class_copyPropertyList(myClass, &count);
-        
-        // iterate each objc_property_t struct
-        for var i: UInt32 = 0; i < count; i++ {
-            let property = properties[Int(i)];
-            
-            // retrieve the property name by calling property_getName function
-            let cname = property_getName(property);
-            
-            // covert the c string into a Swift string
-            let name = String.fromCString(cname);
-            results.append(name!);
-        }
-        
-        // release objc_property_t structs
-        free(properties);
-        
-        print("HERE IS THE RESULT \(results) ")
-        return results;
+    static func intro(m: Measure, f: (label: String?, value: Any) -> ()){
+        let mirror = Mirror(reflecting:m)
+        mirror.children.forEach(f)
     }
+    
+    static func map(m: Measure, f: (label: String?, value: Any) -> ()) -> [Dictionary<String,Any>]{
+        var mapping: [Dictionary<String,Any>] = []
+        let mirror = Mirror(reflecting:m)
+        for child in mirror.children.enumerate(){
+            mapping.append([child.element.label!: child.element.value])
+        }
+        return mapping
+    }
+    
+    
 }

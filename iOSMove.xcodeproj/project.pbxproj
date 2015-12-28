@@ -12,6 +12,7 @@
 		E70BA3B21C1CDA8900D8D2FB /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3B11C1CDA8900D8D2FB /* Acceleration.swift */; };
 		E70BA3B41C1CDAC900D8D2FB /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3B31C1CDAC900D8D2FB /* Measure.swift */; };
 		E73C24E91C171AE100278093 /* BarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73C24E81C171AE100278093 /* BarViewController.swift */; };
+		E76852BC1C27527F006B1A6F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76852BB1C27527F006B1A6F /* SettingsViewController.swift */; };
 		E79E62BC1C1C17DD007DCC11 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A978A11C171DE600693172 /* Charts.framework */; };
 		E79E62BD1C1C17DD007DCC11 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7A978A11C171DE600693172 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E79E62C11C1C183D007DCC11 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A9789F1C171DE600693172 /* Alamofire.framework */; };
@@ -145,6 +146,7 @@
 		E70BA3B11C1CDA8900D8D2FB /* Acceleration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acceleration.swift; sourceTree = "<group>"; };
 		E70BA3B31C1CDAC900D8D2FB /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		E73C24E81C171AE100278093 /* BarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewController.swift; sourceTree = "<group>"; };
+		E76852BB1C27527F006B1A6F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E7A9349E1C1713AA0004BCE0 /* iOSMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A934A11C1713AA0004BCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7A934A31C1713AA0004BCE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,8 @@
 				E73C24E81C171AE100278093 /* BarViewController.swift */,
 				E70BA3AD1C1CD5BA00D8D2FB /* MotionPersister.swift */,
 				6F147BCD1C205E5E00867617 /* LineViewController.swift */,
+				E76852BB1C27527F006B1A6F /* SettingsViewController.swift */,
+
 			);
 			path = iOSMove;
 			sourceTree = "<group>";
@@ -486,6 +490,7 @@
 				E70BA3AE1C1CD5BA00D8D2FB /* MotionPersister.swift in Sources */,
 				E73C24E91C171AE100278093 /* BarViewController.swift in Sources */,
 				E7A934A21C1713AA0004BCE0 /* AppDelegate.swift in Sources */,
+				E76852BC1C27527F006B1A6F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

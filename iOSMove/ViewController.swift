@@ -9,11 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     static var timer: NSTimer!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.conf = NSBundle.mainBundle().objectForInfoDictionaryKey("Actual Config") as! [String: NSObject]
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -25,9 +26,8 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         ViewController.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "probe", userInfo: nil, repeats: true)
     }
-    
+
     func probe(){
         print("hello")
     }
 }
-
