@@ -31,8 +31,8 @@ class MotionPersister {
         }
         
         // TODO: DELETE THIS TEST
-        let all = self.realm.objects(Acceleration)
-        print("Their is \(all.count) number of acc")
+        _ = self.realm.objects(Acceleration)
+        //print("Their is \(all.count) number of acc")
         
     }
     

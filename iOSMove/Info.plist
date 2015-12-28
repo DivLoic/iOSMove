@@ -2,13 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Actual Config</key>
+	<key>UserConfig</key>
 	<dict>
-		<key>interval</key>
-		<integer>5</integer>
-	</dict>
-	<key>Default config</key>
-	<dict>
+		<key>axis</key>
+		<string>Y</string>
+		<key>host</key>
+		<string>ns370799.ip-91-121-193.eu</string>
+		<key>emission</key>
+		<true/>
 		<key>interval</key>
 		<integer>5</integer>
 	</dict>
