@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F147BCE1C205E5E00867617 /* LineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F147BCD1C205E5E00867617 /* LineViewController.swift */; };
 		E70BA3AE1C1CD5BA00D8D2FB /* MotionPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3AD1C1CD5BA00D8D2FB /* MotionPersister.swift */; };
 		E70BA3B21C1CDA8900D8D2FB /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3B11C1CDA8900D8D2FB /* Acceleration.swift */; };
 		E70BA3B41C1CDAC900D8D2FB /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3B31C1CDAC900D8D2FB /* Measure.swift */; };
@@ -137,6 +138,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6F147BCD1C205E5E00867617 /* LineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineViewController.swift; sourceTree = "<group>"; };
 		71B71F814A41BE676ACD96F6 /* Pods-iOSMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSMove/Pods-iOSMove.release.xcconfig"; sourceTree = "<group>"; };
 		A3BCD0E0C324DAFC9E3FC1BD /* Pods_iOSMove.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSMove.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E614B65F2A2CBE1FC1ED6F /* Pods-iOSMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSMove/Pods-iOSMove.debug.xcconfig"; sourceTree = "<group>"; };
@@ -224,7 +226,9 @@
 				E7A934A81C1713AA0004BCE0 /* iOSMove.xcdatamodeld */,
 				E73C24E81C171AE100278093 /* BarViewController.swift */,
 				E70BA3AD1C1CD5BA00D8D2FB /* MotionPersister.swift */,
+				6F147BCD1C205E5E00867617 /* LineViewController.swift */,
 				E76852BB1C27527F006B1A6F /* SettingsViewController.swift */,
+
 			);
 			path = iOSMove;
 			sourceTree = "<group>";
@@ -328,7 +332,6 @@
 				TargetAttributes = {
 					E7A9349D1C1713AA0004BCE0 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 274N5ZM6HT;
 					};
 					E7A934B41C1713AA0004BCE0 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -481,6 +484,7 @@
 			files = (
 				E70BA3B41C1CDAC900D8D2FB /* Measure.swift in Sources */,
 				E7A934A41C1713AA0004BCE0 /* ViewController.swift in Sources */,
+				6F147BCE1C205E5E00867617 /* LineViewController.swift in Sources */,
 				E70BA3B21C1CDA8900D8D2FB /* Acceleration.swift in Sources */,
 				E7A934AA1C1713AA0004BCE0 /* iOSMove.xcdatamodeld in Sources */,
 				E70BA3AE1C1CD5BA00D8D2FB /* MotionPersister.swift in Sources */,
@@ -643,6 +647,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iOSMove/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lmd.iOSMove;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -659,6 +664,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iOSMove/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lmd.iOSMove;
 				PRODUCT_NAME = "$(TARGET_NAME)";
