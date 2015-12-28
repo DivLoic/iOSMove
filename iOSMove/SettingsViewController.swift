@@ -27,7 +27,6 @@ class SettingsViewController: ViewController, UITextFieldDelegate{
         self.hostInput.delegate = self
         self.design()
         self.bindConf()
-        
     }
     
     func bindConf(){
@@ -75,7 +74,7 @@ class SettingsViewController: ViewController, UITextFieldDelegate{
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle(rawValue: 0)!, handler:{ (UIAlertAction) -> () in
             ViewController.writeBundle(true, key:"emission")
             ViewController.writeBundle(4, key:"interval")
-            ViewController.writeBundle("Your host here", key:"host")
+            ViewController.writeBundle("http://ns370799.ip-91-121-193.eu:8083/mobile", key:"host")
             ViewController.writeBundle("X", key:"axis")
             self.refreshConf()
             self.bindConf()
@@ -95,6 +94,7 @@ class SettingsViewController: ViewController, UITextFieldDelegate{
         alert.addAction(UIAlertAction(title: "Delete all", style: UIAlertActionStyle(rawValue: 0)!, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
+    
     // -- Graphics
     
     func design(){
@@ -103,6 +103,11 @@ class SettingsViewController: ViewController, UITextFieldDelegate{
             cell.layer.borderWidth = 0.3;
         }
         onOff.onTintColor = UIColor(red: 0.514, green: 0.741, blue: 0.667, alpha: 1.00)
+    }
+    
+    override func work() {
+        super.work()
+        //print("SettingViewController")
     }
     
     

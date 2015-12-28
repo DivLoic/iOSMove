@@ -17,13 +17,12 @@ import SwiftyJSON
 class MotionPersister {
     
     private let realm = try! Realm()
-    // TODO: That'a awfull, learn how to use a plist file
+    // TODO: OK now leanr how to pass the plist arg to the quit func 
     private static let ksf = "http://ns370799.ip-91-121-193.eu:8083/mobile"
     private static let macidindex = UIDevice.currentDevice()
         .identifierForVendor!.UUIDString.rangeOfString("-")?.startIndex
     private static let id = UIDevice.currentDevice().identifierForVendor!.UUIDString.substringToIndex(macidindex!)
     private static let owner = UIDevice.currentDevice().name
-    
     
     func persite(m: Measure){
         try! self.realm.write {
@@ -33,6 +32,9 @@ class MotionPersister {
         // TODO: DELETE THIS TEST
         _ = self.realm.objects(Acceleration)
         //print("Their is \(all.count) number of acc")
+    }
+    
+    func last(m: Measure, num: Int){ // -> [Measure]
         
     }
     
@@ -51,20 +53,21 @@ class MotionPersister {
         return JSON(dict)
     }
     
-    func emit(m: Measure){
+    func emit(m: Measure, url: String){
         var js: JSON = toJson(m)
         js["_id"] = JSON(MotionPersister.id)
         js["owner"] = JSON(MotionPersister.owner)
         js["upsert"] = JSON(true)
         js["time"] = JSON(MotionPersister.now())
         
-        Alamofire.request(.POST, MotionPersister.ksf, parameters: ["motion": "\(js)"], encoding: .JSON)
+        Alamofire.request(.POST, url, parameters: ["motion": "\(js)"], encoding: .JSON)
     }
     
     static func quit(){
         // TODO: build a keep score in the Server side
+        // TODO: Deleta the propertie ksf
         let js: JSON = JSON("{\"_id\": \"\(MotionPersister.id)\", \"upsert\": false}")
-        Alamofire.request(.POST, MotionPersister.ksf, parameters: ["motion": "\(js)"], encoding: .JSON)
+        Alamofire.request(.POST, ksf, parameters: ["motion": "\(js)"], encoding: .JSON)
     }
     
     static func now() -> String{

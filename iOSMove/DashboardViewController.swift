@@ -11,6 +11,11 @@ import Foundation
 class DashboardViewController : ViewController{
     
     @IBOutlet weak var labelOnOff: UILabel!
+    
+    override func work() {
+        super.work()
+        //print("DashboardViewController")
+    }
 
 
 }

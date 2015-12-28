@@ -7,22 +7,31 @@
 //
 
 import UIKit
-
+import CoreMotion
 class ViewController: UIViewController {
 
     var confEmission: Bool = false
     var confInterval: Int = 0
     var confHost: String = ""
     var confAxis: String = ""
-
+    
+    var clock: Double = 0.0
+    var db = MotionPersister()
     var confBundle: NSDictionary = NSDictionary()
     
-    static var timer: NSTimer!
+    static var timer: NSTimer = NSTimer()
+    static let manager : CMMotionManager = CMMotionManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshConf()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        ViewController.timer.invalidate()
+        ViewController.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self,
+            selector: "work", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,11 +85,21 @@ class ViewController: UIViewController {
         return bundle
     }
 
-    override func viewDidAppear(animated: Bool) {
-        ViewController.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "probe", userInfo: nil, repeats: true)
-    }
-
-    func probe(){
+    func work(){
         /** do something **/
+        if let datum = ViewController.manager.accelerometerData?.acceleration {
+            //reDraw(datum.x, y: datum.y, z: datum.z)
+            // TODO: make the barchartViewController reDraw
+            if Int(clock) == confInterval {
+                db.persite(Acceleration(acc: datum))
+                db.emit(Acceleration(acc: datum), url: confHost)
+                clock = 0.1
+            } else {
+                clock += 0.1
+            }
+        }else{
+            
+            
+        }
     }
 }

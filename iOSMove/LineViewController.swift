@@ -49,4 +49,9 @@ class LineViewController: ViewController,ChartViewDelegate{
         canvas.gridBackgroundColor = self.backGround
         canvas.backgroundColor = self.backGround
     }
+    
+    override func work() {
+        super.work()
+        //print("LineChartViewController")
+    }
 }

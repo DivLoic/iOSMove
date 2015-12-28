@@ -16,18 +16,17 @@ class BarViewController: ViewController, ChartViewDelegate{
     // Outlet
     @IBOutlet weak var canvas: BarChartView!
 
-    var manager : CMMotionManager = CMMotionManager()
-    var clock: Double = 0.0
-    var db = MotionPersister()
+    //var manager : CMMotionManager = CMMotionManager()
+    
 
     let backGround: UIColor = UIColor.whiteColor()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = self.backGround
-        canvas.delegate = self
         initChart()
-        self.manager.startAccelerometerUpdates()
+        canvas.delegate = self
+        self.view.backgroundColor = self.backGround
+        ViewController.manager.startAccelerometerUpdates()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -81,19 +80,8 @@ class BarViewController: ViewController, ChartViewDelegate{
         return pow(round(100*figures)/100,2)
     }
 
-    override func probe(){
-        if let datum = self.manager.accelerometerData?.acceleration {
-            reDraw(datum.x, y: datum.y, z: datum.z)
-            if Int(clock) == confInterval {
-                db.persite(Acceleration(acc: datum))
-                db.emit(Acceleration(acc: datum))
-                clock = 0.1
-            } else {
-                clock += 0.1
-            }
-        }else{
-
-
-        }
+    override func work() {
+        super.work()
+        //print("BarChartViewController")
     }
 }
