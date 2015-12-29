@@ -98,8 +98,8 @@ class ViewController: UIViewController {
                 clock += 0.1
             }
         }else{
-            
-            
+            //TODO : only for simulator
+            db.persite(Acceleration(d: [1.0,2.0,3.0]))
         }
     }
 }

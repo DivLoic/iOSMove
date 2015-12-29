@@ -52,6 +52,7 @@ class LineViewController: ViewController,ChartViewDelegate{
     
     override func work() {
         super.work()
+        db.last(Acceleration(d: [1.0,2.0,3.0]), num: 1)
         //print("LineChartViewController")
     }
 }

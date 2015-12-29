@@ -34,8 +34,12 @@ class MotionPersister {
         //print("Their is \(all.count) number of acc")
     }
     
+    // Retrieve 5 last measures for line chart
     func last(m: Measure, num: Int){ // -> [Measure]
-        
+        if num == 1 {
+            //let test = self.realm.objects(Acceleration).sorted("x")
+            //print(test)
+        }
     }
     
     // TODO: Move this in class measure
