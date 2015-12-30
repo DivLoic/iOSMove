@@ -56,9 +56,6 @@ class LineViewController: ViewController,ChartViewDelegate{
         let records = db.last(Acceleration.self, num: 5)
         records.forEach { (r: Object) -> () in
             let acc = r as! Acceleration
-            print(acc.datetime)
         }
-        print("----------------------------------------------------")
-        //print("LineChartViewController")
     }
 }
