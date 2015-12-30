@@ -71,18 +71,19 @@ class SettingsViewController: ViewController, UITextFieldDelegate{
             message: "Do you really want to reset all the app configuration?",
             preferredStyle: UIAlertControllerStyle.Alert)
         
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle(rawValue: 0)!, handler:{ (UIAlertAction) -> () in
-            ViewController.writeBundle(true, key:"emission")
-            ViewController.writeBundle(4, key:"interval")
-            ViewController.writeBundle("http://ns370799.ip-91-121-193.eu:8083/mobile", key:"host")
-            ViewController.writeBundle("X", key:"axis")
-            self.refreshConf()
-            self.bindConf()
-            }
-            
-        ))
         alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle(rawValue: 1)!, handler:nil))
         self.presentViewController(alert, animated: true, completion: nil)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle(rawValue: 0)!,
+            handler:{ (UIAlertAction) -> () in
+                let bun = ViewController.mainBundle()
+                ViewController.writeBundle(bun["emission"] as! Bool, key:"emission")
+                ViewController.writeBundle(bun["interval"] as! Int , key:"interval")
+                ViewController.writeBundle(bun["host"] as! String, key:"host")
+                ViewController.writeBundle(bun["axis"] as! String, key:"axis")
+                self.refreshConf()
+                self.bindConf()
+        }))
     }
     
     @IBAction func dropallmeasures(sender: UIButton) {
@@ -91,7 +92,11 @@ class SettingsViewController: ViewController, UITextFieldDelegate{
             preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle(rawValue: 0)!, handler: nil))
-        alert.addAction(UIAlertAction(title: "Delete all", style: UIAlertActionStyle(rawValue: 0)!, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Delete all", style: UIAlertActionStyle(rawValue: 1)!, handler:{
+            (UIAlertAction) -> () in try! AppDelegate.realm.write { AppDelegate.realm.deleteAll() }
+        }))
+        
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
@@ -102,7 +107,7 @@ class SettingsViewController: ViewController, UITextFieldDelegate{
             cell.layer.borderColor = UIColor(red: 0.871, green: 0.871, blue: 0.871, alpha: 1.00).CGColor
             cell.layer.borderWidth = 0.3;
         }
-        onOff.onTintColor = UIColor(red: 0.514, green: 0.741, blue: 0.667, alpha: 1.00)
+        onOff.onTintColor = UIColor(red: 0.741, green: 0.796, blue: 0.541, alpha: 1.00)
     }
     
     override func work() {

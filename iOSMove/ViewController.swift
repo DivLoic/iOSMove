@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMotion
+
 class ViewController: UIViewController {
 
     var confEmission: Bool = false
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        refreshConf()
         ViewController.timer.invalidate()
         ViewController.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self,
             selector: "work", userInfo: nil, repeats: true)
@@ -86,15 +88,12 @@ class ViewController: UIViewController {
     }
 
     func work(){
-        /** do something **/
         if let datum = ViewController.manager.accelerometerData?.acceleration {
-            //reDraw(datum.x, y: datum.y, z: datum.z)
-            // TODO: make the barchartViewController reDraw
             if Int(clock) == confInterval {
                 var a = Acceleration()
                 a.setting(datum.x, y: datum.y, z: datum.z)
-                //a.x = datum.x; a.y = datum.y; a.z = datum.z
-                db.persite(a); db.emit(a, url: confHost)
+                if(confEmission){db.emit(a, url: confHost)}
+                db.persite(a)
                 clock = 0.1
             } else {
                 clock += 0.1

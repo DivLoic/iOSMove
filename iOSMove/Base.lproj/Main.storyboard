@@ -18,28 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bar Chart de la position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q3-n6-1Vo">
-                                <rect key="frame" x="210" y="28" width="180" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="ZbH-Of-BxM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0m-Gs-MFB" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cZ-fa-9Gj">
+                                <rect key="frame" x="-20" y="0.0" width="640" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="laU-g2-J6u"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Bar Chart Principal" id="7bw-p5-bbc"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8Q3-n6-1Vo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="2hT-va-wiE"/>
-                            <constraint firstItem="8Q3-n6-1Vo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HRa-8R-Rkp"/>
+                            <constraint firstAttribute="trailing" secondItem="1cZ-fa-9Gj" secondAttribute="trailing" constant="-20" id="84C-mx-Qq9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u0m-Gs-MFB" secondAttribute="bottom" constant="20" id="O3R-07-Zxu"/>
                             <constraint firstItem="u0m-Gs-MFB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Og5-XA-fiS"/>
                             <constraint firstItem="u0m-Gs-MFB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="QCc-vQ-o96"/>
+                            <constraint firstItem="1cZ-fa-9Gj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="Yj8-k1-xSo"/>
                             <constraint firstItem="u0m-Gs-MFB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fjH-En-pzL"/>
+                            <constraint firstItem="1cZ-fa-9Gj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-20" id="nWh-cX-8q8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="TC0-xT-IjV"/>
@@ -123,7 +124,7 @@
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="f3T-Ck-nCV">
                                                                 <rect key="frame" x="187" y="10" width="332.5" height="31"/>
-                                                                <color key="tintColor" red="0.51372549020000002" green="0.74117647060000003" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="tintColor" red="0.74117647058823533" green="0.79607843137254897" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <connections>
                                                                     <action selector="slideAction:" destination="gJ3-Lc-5VU" eventType="valueChanged" id="Cbd-oO-O4W"/>
                                                                 </connections>
@@ -131,7 +132,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-KN-fv3">
                                                                 <rect key="frame" x="538" y="14" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                                <color key="textColor" red="0.51372549020000002" green="0.74117647060000003" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.74117647060000003" green="0.79607843140000001" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -199,7 +200,7 @@
                                                                     <segment title="Y"/>
                                                                     <segment title="Z"/>
                                                                 </segments>
-                                                                <color key="tintColor" red="0.51372549020000002" green="0.74117647060000003" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="tintColor" red="0.74117647060000003" green="0.79607843140000001" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <connections>
                                                                     <action selector="segmentAction:" destination="gJ3-Lc-5VU" eventType="valueChanged" id="yjP-mV-6bw"/>
                                                                 </connections>
@@ -221,7 +222,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HP-uq-dXG">
                                                                 <rect key="frame" x="20" y="10" width="560" height="30"/>
                                                                 <state key="normal" title="Reset all settings">
-                                                                    <color key="titleColor" red="0.51372549020000002" green="0.74117647060000003" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleColor" red="0.74117647060000003" green="0.79607843140000001" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="reinitialisation:" destination="gJ3-Lc-5VU" eventType="touchUpInside" id="NBB-Uv-FxZ"/>
