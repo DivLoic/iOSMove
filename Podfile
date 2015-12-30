@@ -6,7 +6,7 @@ use_frameworks!
 target 'iOSMove' do
   pod 'Charts'
   pod 'Alamofire', '~> 3.0'
-  pod 'RealmSwift'
+  pod 'RealmSwift', '~> 0.97.0'
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end
 

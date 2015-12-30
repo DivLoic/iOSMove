@@ -8,6 +8,7 @@
 
 import Foundation
 import Charts
+import RealmSwift
 
 class LineViewController: ViewController,ChartViewDelegate{
     
@@ -52,7 +53,12 @@ class LineViewController: ViewController,ChartViewDelegate{
     
     override func work() {
         super.work()
-        db.last(Acceleration(d: [1.0,2.0,3.0]), num: 1)
+        let records = db.last(Acceleration.self, num: 5)
+        records.forEach { (r: Object) -> () in
+            let acc = r as! Acceleration
+            print(acc.datetime)
+        }
+        print("----------------------------------------------------")
         //print("LineChartViewController")
     }
 }

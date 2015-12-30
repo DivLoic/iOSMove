@@ -16,7 +16,7 @@ import SwiftyJSON
 
 class MotionPersister {
     
-    private let realm = try! Realm()
+
     // TODO: OK now leanr how to pass the plist arg to the quit func 
     private static let ksf = "http://ns370799.ip-91-121-193.eu:8083/mobile"
     private static let macidindex = UIDevice.currentDevice()
@@ -24,28 +24,30 @@ class MotionPersister {
     private static let id = UIDevice.currentDevice().identifierForVendor!.UUIDString.substringToIndex(macidindex!)
     private static let owner = UIDevice.currentDevice().name
     
-    func persite(m: Measure){
-        try! self.realm.write {
-            var _ = self.realm.add(m)
+    func persite(m: Object){
+        try! AppDelegate.realm.write {
+            var _ = AppDelegate.realm.add(m)
         }
         
         // TODO: DELETE THIS TEST
-        _ = self.realm.objects(Acceleration)
+        _ = AppDelegate.realm.objects(Acceleration)
         //print("Their is \(all.count) number of acc")
     }
     
     // Retrieve 5 last measures for line chart
-    func last(m: Measure, num: Int){ // -> [Measure]
-        if num == 1 {
-            //let test = self.realm.objects(Acceleration).sorted("x")
-            //print(test)
+    func last(model: Object.Type, num: Int) -> [Object]{
+        let selected = AppDelegate.realm.objects(model).sorted("datetime", ascending: false)
+        let slice = selected.dropLast(selected.count - 5)
+        return slice.flatMap { (line: Object) -> Object in
+            return line
         }
     }
     
     // TODO: Move this in class measure
-    func toJson(m: Measure) -> JSON{
+    func toJson(m: Object) -> JSON{
         var dict =  [String: Double]()
-        Measure.intro(m, f: {(label: String?, value: Any) -> () in
+        let mirror = Mirror(reflecting:m)
+        mirror.children.forEach({(label: String?, value: Any) -> () in
             let optval = String(value)
             if let key = label {
                 let val = Double(optval.substringWithRange(Range<String.Index>(
@@ -57,7 +59,7 @@ class MotionPersister {
         return JSON(dict)
     }
     
-    func emit(m: Measure, url: String){
+    func emit(m: Object, url: String){
         var js: JSON = toJson(m)
         js["_id"] = JSON(MotionPersister.id)
         js["owner"] = JSON(MotionPersister.owner)
@@ -77,6 +79,12 @@ class MotionPersister {
     static func now() -> String{
         let formatter = NSDateFormatter()
         formatter.dateFormat = "HH:mm:ss";
+        return formatter.stringFromDate(NSDate())
+    }
+    
+    static func today() -> String{
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd_HH:mm:ss";
         return formatter.stringFromDate(NSDate())
     }
     
