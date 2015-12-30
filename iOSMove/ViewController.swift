@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         ViewController.timer.invalidate()
         ViewController.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self,
             selector: "work", userInfo: nil, repeats: true)
+        refreshConf()
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,6 +105,15 @@ class ViewController: UIViewController {
             var a = Acceleration()
             a.setting(1.0, y: 2.0, z: 3.0)
             db.persite(a)
+            var b = Acceleration()
+            b.setting(5.0, y: 1.0, z: 8.0)
+            db.persite(b)
+            var c = Acceleration()
+            c.setting(9.5, y: 1.0, z: 8.0)
+            db.persite(c)
+            var d = Acceleration()
+            d.setting(7.3, y: 1.0, z: 8.0)
+            //db.persite(d)
         }
     }
 }
