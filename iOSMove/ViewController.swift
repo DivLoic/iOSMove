@@ -91,15 +91,19 @@ class ViewController: UIViewController {
             //reDraw(datum.x, y: datum.y, z: datum.z)
             // TODO: make the barchartViewController reDraw
             if Int(clock) == confInterval {
-                db.persite(Acceleration(acc: datum))
-                db.emit(Acceleration(acc: datum), url: confHost)
+                var a = Acceleration()
+                a.setting(datum.x, y: datum.y, z: datum.z)
+                //a.x = datum.x; a.y = datum.y; a.z = datum.z
+                db.persite(a); db.emit(a, url: confHost)
                 clock = 0.1
             } else {
                 clock += 0.1
             }
         }else{
-            
-            
+            //TODO : only for simulator
+            var a = Acceleration()
+            a.setting(1.0, y: 2.0, z: 3.0)
+            db.persite(a)
         }
     }
 }

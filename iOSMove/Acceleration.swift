@@ -7,28 +7,23 @@
 //
 
 import Foundation
-import CoreMotion
+import RealmSwift
 
-class Acceleration: Measure{
+class Acceleration: Object{
     
-    var x: Double? = nil
-    var y: Double? = nil
-    var z: Double? = nil
+    dynamic var x = 0.0
+    dynamic var y = 0.0
+    dynamic var z = 0.0
     
+    dynamic var time = "00:00:00"
+    dynamic var datetime = ""
     
-    init(d:[Double]){
-        self.x = d[0]
-        self.y = d[1]
-        self.z = d[2]
-        super.init()
-    }
-    
-    convenience init(acc: CMAcceleration){
-        self.init(d: [acc.x, acc.y, acc.z])
-    }
-    
-    convenience required init() {
-        self.init(d: [0.0, 0.0, 0.0])
+    func setting(x: Double,y: Double, z:Double){
+        self.x = x
+        self.y = y
+        self.z = z
+        self.time = MotionPersister.now()
+        self.datetime = MotionPersister.today()
     }
     
 }

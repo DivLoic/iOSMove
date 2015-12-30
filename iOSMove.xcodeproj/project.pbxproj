@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F147BCE1C205E5E00867617 /* LineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F147BCD1C205E5E00867617 /* LineViewController.swift */; };
+		BE1C6AB47A3C211A658A30CC /* Pods_iOSMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCD0E0C324DAFC9E3FC1BD /* Pods_iOSMove.framework */; };
 		E70BA3AE1C1CD5BA00D8D2FB /* MotionPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3AD1C1CD5BA00D8D2FB /* MotionPersister.swift */; };
 		E70BA3B21C1CDA8900D8D2FB /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3B11C1CDA8900D8D2FB /* Acceleration.swift */; };
 		E70BA3B41C1CDAC900D8D2FB /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3B31C1CDAC900D8D2FB /* Measure.swift */; };
@@ -175,6 +176,7 @@
 				E79E62C11C1C183D007DCC11 /* Alamofire.framework in Frameworks */,
 				E79E62C51C1C1870007DCC11 /* RealmSwift.framework in Frameworks */,
 				E79E62CD1C1C1876007DCC11 /* SwiftyJSON.framework in Frameworks */,
+				BE1C6AB47A3C211A658A30CC /* Pods_iOSMove.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

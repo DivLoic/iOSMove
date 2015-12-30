@@ -12,6 +12,11 @@ import SwiftyJSON
 
 class Measure: Object{
     
+    var date: NSDate? = nil
+    
+    func measure(){
+        date = NSDate()
+    }
     
     // TODO: Use the power of heritage by writing non static
     
