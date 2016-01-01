@@ -492,25 +492,25 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfY-Nv-W4z">
                                 <rect key="frame" x="0.0" y="264" width="600" height="287"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfG-w0-bvs" userLabel="Canvas" customClass="BubbleChartView" customModule="Charts">
+                                        <rect key="frame" x="20" y="21" width="561" height="246"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bubble Chart " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKh-pa-acH">
                                         <rect key="frame" x="250" y="3" width="100" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfG-w0-bvs" userLabel="Canvas" customClass="LineChartView" customModule="Charts">
-                                        <rect key="frame" x="20" y="21" width="561" height="246"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="BKh-pa-acH" firstAttribute="top" secondItem="hfY-Nv-W4z" secondAttribute="top" constant="3" id="1lf-KN-PxH"/>
                                     <constraint firstAttribute="bottom" secondItem="cfG-w0-bvs" secondAttribute="bottom" constant="20" id="6z4-ql-UPX"/>
                                     <constraint firstItem="cfG-w0-bvs" firstAttribute="centerX" secondItem="hfY-Nv-W4z" secondAttribute="centerX" id="EAW-p3-0rl"/>
                                     <constraint firstItem="cfG-w0-bvs" firstAttribute="centerY" secondItem="hfY-Nv-W4z" secondAttribute="centerY" id="Wuv-Nt-Mfy"/>
                                     <constraint firstItem="cfG-w0-bvs" firstAttribute="leading" secondItem="hfY-Nv-W4z" secondAttribute="leading" constant="20" id="j6x-l0-L1P"/>
                                     <constraint firstItem="BKh-pa-acH" firstAttribute="centerX" secondItem="hfY-Nv-W4z" secondAttribute="centerX" id="rPe-gP-ygu"/>
-                                    <constraint firstItem="BKh-pa-acH" firstAttribute="top" secondItem="hfY-Nv-W4z" secondAttribute="top" constant="3" id="xcD-mF-GPB"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -530,6 +530,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="downloads" id="URw-2n-cLM"/>
+                    <connections>
+                        <outlet property="canvas" destination="cfG-w0-bvs" id="cJA-OZ-GTW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsF-L8-s35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
