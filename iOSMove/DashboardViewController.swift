@@ -29,10 +29,10 @@ class DashboardViewController : ViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         let array1 = [5.0,0.5,4.0]
-        let array2 = [2.0,3.5,6.0]
+        let array2 = [2.0,3.5,1.0]
         let array3 = [8.0,5.5,10.0]
-        //initChart()
-        //bubleDraw(array1, y: array2, z : array3)
+        initChart()
+        bubleDraw(array1, y: array2, z : array3)
         showRecordsAmount()
         showLastRecord()
         showBatteryLevel()
@@ -84,7 +84,7 @@ class DashboardViewController : ViewController{
         let entriesBubble = entriesBubbleX + entriesBubbleY + entriesBubbleZ
         
         let dataSetBubble = BubbleChartDataSet(yVals: entriesBubble, label :"")
-        let wrapedBubble = BubbleChartData(xVals: x, dataSet: dataSetBubble)
+        let wrapedBubble = BubbleChartData(xVals: x + y + z, dataSet: dataSetBubble)
         canvas.data = wrapedBubble
     }
     
