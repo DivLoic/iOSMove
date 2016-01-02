@@ -18,9 +18,7 @@ class LineViewController: ViewController,ChartViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let array  = [5.0,0.5,4.0,1.0,10.0]
         setChart()
-        drawLineChart(array)
     }
     
     func drawLineChart(p:[Double]){
@@ -30,7 +28,7 @@ class LineViewController: ViewController,ChartViewDelegate{
             entries.append(dataEntry)
         }
 
-        let dataSet = LineChartDataSet(yVals: entries, label: "position")
+        let dataSet = LineChartDataSet(yVals: entries, label: "position \(confAxis)")
         dataSet.colors = [vcgreen]
         dataSet.circleColors = [vcgreen]
         let data = LineChartData(xVals: p, dataSet: dataSet)
@@ -49,13 +47,34 @@ class LineViewController: ViewController,ChartViewDelegate{
 
         canvas.gridBackgroundColor = self.backGround
         canvas.backgroundColor = self.backGround
+        
+        printValues()
     }
     
     override func work() {
         super.work()
+        if Int(self.clock) == confInterval {
+            printValues()
+            self.clock = 0.0
+        }else{
+            self.clock += 0.1
+        }
+    }
+    
+    func printValues(){
+        var axis: [Double] = []
+        
         let records = db.last(Acceleration.self, num: 5)
         records.forEach { (r: Object) -> () in
             let acc = r as! Acceleration
+            if (confAxis == "X"){
+                axis.append(acc.x)
+            }else if (confAxis == "Y"){
+                axis.append(acc.y)
+            }else if (confAxis == "Z"){
+                axis.append(acc.z)
+            }
         }
+        drawLineChart(axis)
     }
 }

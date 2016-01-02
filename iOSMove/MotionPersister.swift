@@ -15,23 +15,11 @@ import RealmSwift
 import SwiftyJSON
 
 class MotionPersister {
-    
 
-    // TODO: OK now leanr how to pass the plist arg to the quit func 
-    private static let ksf = "http://ns370799.ip-91-121-193.eu:8083/mobile"
-    private static let macidindex = UIDevice.currentDevice()
-        .identifierForVendor!.UUIDString.rangeOfString("-")?.startIndex
-    private static let id = UIDevice.currentDevice().identifierForVendor!.UUIDString.substringToIndex(macidindex!)
-    private static let owner = UIDevice.currentDevice().name
-    
     func persite(m: Object){
         try! AppDelegate.realm.write {
             var _ = AppDelegate.realm.add(m)
         }
-        
-        // TODO: DELETE THIS TEST
-        _ = AppDelegate.realm.objects(Acceleration)
-        //print("Their is \(all.count) number of acc")
     }
     
     // Retrieve 5 last measures for line chart
@@ -43,17 +31,13 @@ class MotionPersister {
         }
     }
     
-    // TODO: Move this in class measure
     func toJson(m: Object) -> JSON{
-        var dict =  [String: Double]()
+        var dict =  [String: String]()
         let mirror = Mirror(reflecting:m)
         mirror.children.forEach({(label: String?, value: Any) -> () in
             let optval = String(value)
             if let key = label {
-                let val = Double(optval.substringWithRange(Range<String.Index>(
-                    start: optval.startIndex.advancedBy(9),
-                    end: optval.endIndex.advancedBy(-1))))
-                dict[key] = round(1000*val!)/1000
+                    dict[key] = optval
             }
         })
         return JSON(dict)
@@ -61,19 +45,17 @@ class MotionPersister {
     
     func emit(m: Object, url: String){
         var js: JSON = toJson(m)
-        js["_id"] = JSON(MotionPersister.id)
-        js["owner"] = JSON(MotionPersister.owner)
+        js["_id"] = JSON(MotionPersister.getDeviceId())
+        js["owner"] = JSON(UIDevice.currentDevice().name)
         js["upsert"] = JSON(true)
-        js["time"] = JSON(MotionPersister.now())
         
         Alamofire.request(.POST, url, parameters: ["motion": "\(js)"], encoding: .JSON)
     }
     
     static func quit(){
-        // TODO: build a keep score in the Server side
-        // TODO: Deleta the propertie ksf
-        let js: JSON = JSON("{\"_id\": \"\(MotionPersister.id)\", \"upsert\": false}")
-        Alamofire.request(.POST, ksf, parameters: ["motion": "\(js)"], encoding: .JSON)
+        let url = ViewController.mainBundle()["host"] as! String
+        let js: JSON = JSON("{\"_id\": \"\(MotionPersister.getDeviceId())\", \"upsert\": false}")
+        Alamofire.request(.POST, url, parameters: ["motion": "\(js)"], encoding: .JSON)
     }
     
     static func now() -> String{
@@ -86,6 +68,15 @@ class MotionPersister {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd_HH:mm:ss";
         return formatter.stringFromDate(NSDate())
+    }
+    
+    static func getDeviceId() -> String {
+        let macidindex = UIDevice.currentDevice()
+            .identifierForVendor!.UUIDString
+            .rangeOfString("-")?.startIndex
+        
+        return UIDevice.currentDevice().identifierForVendor!
+            .UUIDString.substringToIndex(macidindex!)
     }
     
 }

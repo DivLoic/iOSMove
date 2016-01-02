@@ -36,16 +36,16 @@ class BarViewController: ViewController, ChartViewDelegate{
     }
 
     func reDraw(x:Double, y:Double, z:Double) {
-        let dataSet = BarChartDataSet(yVals:
-            [BarChartDataEntry(value: ceilForDisplay(x), xIndex: 0),
-                BarChartDataEntry(value: ceilForDisplay(y), xIndex: 1),
-                BarChartDataEntry(value: ceilForDisplay(z), xIndex: 2),
-                BarChartDataEntry(value: 1.0, xIndex: 3)], label: "")
+        let dataSet = BarChartDataSet(yVals:[
+            BarChartDataEntry(value: ceilForDisplay(x), xIndex: 0),
+            BarChartDataEntry(value: ceilForDisplay(y), xIndex: 1),
+            BarChartDataEntry(value: ceilForDisplay(z), xIndex: 2),
+            BarChartDataEntry(value: 1.0, xIndex: 3)], label: "")
 
         dataSet.colors = [
-            UIColor(red:0.04, green:0.40, blue:0.45, alpha:1.0),
-            UIColor(red:0.07, green:0.55, blue:0.55, alpha:1.0),
-            UIColor(red:0.51, green:0.74, blue:0.67, alpha:1.0),]
+            UIColor(red: 0.996, green: 0.969, blue: 0.776, alpha: 1.00),
+            UIColor(red: 0.518, green: 0.600, blue: 0.243, alpha: 1.00),
+            UIColor(red: 0.741, green: 0.796, blue: 0.541, alpha: 1.00)]
         let wraped = BarChartData(xVals: ["X", "Y", "Z"], dataSet: dataSet)
         self.canvas.data = wraped
     }
@@ -54,9 +54,6 @@ class BarViewController: ViewController, ChartViewDelegate{
     func initChart(){
         canvas.setScaleEnabled(false)
         canvas.descriptionText = ""
-
-
-        //canvas.xAxis.labelFont = UIFont(name: "System 14.0", size: 14)!
         canvas.userInteractionEnabled = false
 
         canvas.xAxis.labelPosition = .Bottom
@@ -64,11 +61,6 @@ class BarViewController: ViewController, ChartViewDelegate{
         canvas.getAxis(ChartYAxis.AxisDependency.Left).drawAxisLineEnabled = false
         canvas.getAxis(ChartYAxis.AxisDependency.Right).drawAxisLineEnabled = false
         canvas.getAxis(ChartYAxis.AxisDependency.Left).drawLabelsEnabled = false
-
-
-        //canvas.getAxis(ChartYAxis.AxisDependency.Right).customAxisMax = 1.0
-        //canvas.getAxis(ChartYAxis.AxisDependency.Right).customAxisMin = 0.0
-        //canvas.getAxis(ChartYAxis.AxisDependency.Right).drawGridLinesEnabled = false
 
         canvas.gridBackgroundColor = self.backGround
         canvas.backgroundColor = self.backGround
@@ -78,6 +70,8 @@ class BarViewController: ViewController, ChartViewDelegate{
 
     override func work() {
         super.work()
-        //print("BarChartViewController")
+        if let datum = ViewController.manager.accelerometerData?.acceleration {
+            reDraw(datum.x, y: datum.y, z: datum.z)
+        }
     }
 }
