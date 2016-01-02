@@ -12,7 +12,7 @@ import Foundation
 import Charts
 import UIKit
  
-class DashboardViewController : ViewController{
+class DashboardViewController : ViewController, ChartViewDelegate{
 
     // -- IBOutlet
     
@@ -144,6 +144,5 @@ class DashboardViewController : ViewController{
             }
         }
     }
-    
 
 }

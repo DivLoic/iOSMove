@@ -88,6 +88,14 @@ class ViewController: UIViewController {
         let bundle = url!.URLByAppendingPathComponent("user.plist").absoluteString
         return bundle
     }
+    
+    override func shouldAutorotate() -> Bool {
+        if(self.isKindOfClass(DashboardViewController)){
+            return false
+        } else {
+            return true
+        }
+    }
 
     func work(){
         /** do something **/
@@ -109,5 +117,15 @@ class ViewController: UIViewController {
             a.setting(1.0, y: 2.0, z: 3.0)
             db.persite(a)
         }
+    }
+}
+
+extension UITabBarController {
+    
+    public override func shouldAutorotate() -> Bool {
+        if let selected = selectedViewController {
+            return selected.shouldAutorotate()
+        }
+        return super.shouldAutorotate()
     }
 }
