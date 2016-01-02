@@ -76,10 +76,6 @@ class BarViewController: ViewController, ChartViewDelegate{
         reDraw(0.1, y: 0.5, z: 0.2)
     }
 
-    func ceilForDisplay(figures: Double) -> Double{
-        return pow(round(100*figures)/100,2)
-    }
-
     override func work() {
         super.work()
         //print("BarChartViewController")

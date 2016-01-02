@@ -46,6 +46,10 @@ class ViewController: UIViewController {
         confHost = self.confBundle["host"] as! String
         confAxis = self.confBundle["axis"] as! String
     }
+    
+    func ceilForDisplay(figures: Double) -> Double{
+        return abs(round(100*figures)/100)
+    }
 
     static func mainBundle()-> NSDictionary{
         var dico = NSDictionary()
@@ -94,7 +98,7 @@ class ViewController: UIViewController {
                 var a = Acceleration()
                 a.setting(datum.x, y: datum.y, z: datum.z)
                 //a.x = datum.x; a.y = datum.y; a.z = datum.z
-                db.persite(a); db.emit(a, url: confHost)
+                db.persite(a); //db.emit(a, url: confHost)
                 clock = 0.1
             } else {
                 clock += 0.1
