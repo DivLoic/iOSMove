@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Bar View Controller-->
+        <!--Bar-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BarViewController" customModule="iOSMove" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,7 +43,7 @@
                             <constraint firstItem="1cZ-fa-9Gj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-20" id="nWh-cX-8q8"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="TC0-xT-IjV"/>
+                    <tabBarItem key="tabBarItem" title="Bar" image="icon-bar.png" id="TC0-xT-IjV"/>
                     <connections>
                         <outlet property="canvas" destination="u0m-Gs-MFB" id="y90-eu-ACG"/>
                     </connections>
@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="1614" y="-1089"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="U34-cS-CfC">
             <objects>
                 <viewController id="gJ3-Lc-5VU" customClass="SettingsViewController" customModule="iOSMove" customModuleProvider="target" sceneMemberID="viewController">
@@ -310,7 +310,7 @@
                             <constraint firstItem="LAo-Rq-Knb" firstAttribute="leading" secondItem="LMB-7V-yyA" secondAttribute="leading" id="wAt-FX-iQI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="q8A-iO-8Hy"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="icon-shape.png" id="q8A-iO-8Hy"/>
                     <connections>
                         <outlet property="drop" destination="z9C-74-qjm" id="gK6-QV-ZKC"/>
                         <outlet property="hostInput" destination="PDs-Qq-1OE" id="Bx4-dI-vww"/>
@@ -349,7 +349,7 @@
             </objects>
             <point key="canvasLocation" x="498" y="351"/>
         </scene>
-        <!--Line View Controller-->
+        <!--Line-->
         <scene sceneID="E3f-we-G2p">
             <objects>
                 <viewController id="qia-nN-AXg" customClass="LineViewController" customModule="iOSMove" customModuleProvider="target" sceneMemberID="viewController">
@@ -386,7 +386,7 @@
                             <constraint firstItem="N0e-Qk-otH" firstAttribute="leading" secondItem="Qpe-jN-u3H" secondAttribute="leading" constant="-20" id="p0p-BJ-zes"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="xW0-Ik-522"/>
+                    <tabBarItem key="tabBarItem" title="Line" image="icon-graf.png" id="xW0-Ik-522"/>
                     <connections>
                         <outlet property="canvas" destination="88I-OS-2p2" id="dy2-5C-5xT"/>
                     </connections>
@@ -395,7 +395,7 @@
             </objects>
             <point key="canvasLocation" x="1614" y="-241"/>
         </scene>
-        <!--Dashboard View Controller-->
+        <!--Dashboard-->
         <scene sceneID="icy-VK-utb">
             <objects>
                 <viewController id="hzK-zP-aC8" customClass="DashboardViewController" customModule="iOSMove" customModuleProvider="target" sceneMemberID="viewController">
@@ -559,7 +559,7 @@
                             <constraint firstItem="hfY-Nv-W4z" firstAttribute="bottom" secondItem="qnb-08-RBS" secondAttribute="top" id="xfM-Dp-WrB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="URw-2n-cLM"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="icon-dash.png" id="URw-2n-cLM"/>
                     <connections>
                         <outlet property="batteryLevel" destination="BqJ-f5-QrW" id="Ydg-WK-Twy"/>
                         <outlet property="batteryState" destination="73e-fj-6M9" id="evg-RB-KtW"/>
@@ -576,4 +576,10 @@
             <point key="canvasLocation" x="1622" y="738"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-bar.png" width="25" height="25"/>
+        <image name="icon-dash.png" width="25" height="25"/>
+        <image name="icon-graf.png" width="25" height="25"/>
+        <image name="icon-shape.png" width="25" height="25"/>
+    </resources>
 </document>

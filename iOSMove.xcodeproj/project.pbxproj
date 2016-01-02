@@ -41,6 +41,10 @@
 		E7A934AC1C1713AA0004BCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7A934AB1C1713AA0004BCE0 /* Assets.xcassets */; };
 		E7A934AF1C1713AA0004BCE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A934AD1C1713AA0004BCE0 /* LaunchScreen.storyboard */; };
 		E7A934BA1C1713AA0004BCE0 /* iOSMoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A934B91C1713AA0004BCE0 /* iOSMoveTests.swift */; };
+		F935F1F71C3867DE003BB839 /* icon-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = F935F1F61C3867DE003BB839 /* icon-bar.png */; };
+		F935F1FD1C387187003BB839 /* icon-graf.png in Resources */ = {isa = PBXBuildFile; fileRef = F935F1FC1C387187003BB839 /* icon-graf.png */; };
+		F935F1FF1C3873EB003BB839 /* icon-dash.png in Resources */ = {isa = PBXBuildFile; fileRef = F935F1FE1C3873EB003BB839 /* icon-dash.png */; };
+		F935F2051C387B44003BB839 /* icon-shape.png in Resources */ = {isa = PBXBuildFile; fileRef = F935F2041C387B44003BB839 /* icon-shape.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +184,10 @@
 		E7A934B91C1713AA0004BCE0 /* iOSMoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMoveTests.swift; sourceTree = "<group>"; };
 		E7A934BB1C1713AA0004BCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7A978951C171DE600693172 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		F935F1F61C3867DE003BB839 /* icon-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-bar.png"; sourceTree = "<group>"; };
+		F935F1FC1C387187003BB839 /* icon-graf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-graf.png"; sourceTree = "<group>"; };
+		F935F1FE1C3873EB003BB839 /* icon-dash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-dash.png"; sourceTree = "<group>"; };
+		F935F2041C387B44003BB839 /* icon-shape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-shape.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +233,10 @@
 				E7A1DB651C35F75100998A2E /* iOSMove_87.png */,
 				E7A1DB661C35F75100998A2E /* iOSMove_80.png */,
 				E7A1DB671C35F75100998A2E /* iOSMove_60.png */,
+				F935F1F61C3867DE003BB839 /* icon-bar.png */,
+				F935F1FE1C3873EB003BB839 /* icon-dash.png */,
+				F935F1FC1C387187003BB839 /* icon-graf.png */,
+				F935F2041C387B44003BB839 /* icon-shape.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -455,14 +467,18 @@
 			files = (
 				E7A934AF1C1713AA0004BCE0 /* LaunchScreen.storyboard in Resources */,
 				E7A1DB6B1C35F75100998A2E /* iOSMove_87.png in Resources */,
+				F935F1FF1C3873EB003BB839 /* icon-dash.png in Resources */,
 				E7A934AC1C1713AA0004BCE0 /* Assets.xcassets in Resources */,
 				E7A1DB701C35FBFD00998A2E /* iOSMove-icon-white.png in Resources */,
 				E7A934A71C1713AA0004BCE0 /* Main.storyboard in Resources */,
 				E7A1DB6D1C35F75100998A2E /* iOSMove_60.png in Resources */,
 				E7A1DB6A1C35F75100998A2E /* iOSMove_120.png in Resources */,
+				F935F2051C387B44003BB839 /* icon-shape.png in Resources */,
 				E72F86661C28AB0600F506D9 /* user.plist in Resources */,
 				E7A1DB691C35F75100998A2E /* iOSMove_180.png in Resources */,
 				E7A1DB6C1C35F75100998A2E /* iOSMove_80.png in Resources */,
+				F935F1F71C3867DE003BB839 /* icon-bar.png in Resources */,
+				F935F1FD1C387187003BB839 /* icon-graf.png in Resources */,
 				E7A1DB681C35F75100998A2E /* iOSMove_58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
