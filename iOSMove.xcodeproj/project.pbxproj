@@ -26,6 +26,13 @@
 		E79E62CA1C1C1873007DCC11 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7A978A51C171DE600693172 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E79E62CD1C1C1876007DCC11 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A978A91C171DE600693172 /* SwiftyJSON.framework */; };
 		E79E62CE1C1C1876007DCC11 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7A978A91C171DE600693172 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7A1DB681C35F75100998A2E /* iOSMove_58.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A1DB621C35F75100998A2E /* iOSMove_58.png */; };
+		E7A1DB691C35F75100998A2E /* iOSMove_180.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A1DB631C35F75100998A2E /* iOSMove_180.png */; };
+		E7A1DB6A1C35F75100998A2E /* iOSMove_120.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A1DB641C35F75100998A2E /* iOSMove_120.png */; };
+		E7A1DB6B1C35F75100998A2E /* iOSMove_87.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A1DB651C35F75100998A2E /* iOSMove_87.png */; };
+		E7A1DB6C1C35F75100998A2E /* iOSMove_80.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A1DB661C35F75100998A2E /* iOSMove_80.png */; };
+		E7A1DB6D1C35F75100998A2E /* iOSMove_60.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A1DB671C35F75100998A2E /* iOSMove_60.png */; };
+		E7A1DB701C35FBFD00998A2E /* iOSMove-icon-white.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A1DB6F1C35FBFD00998A2E /* iOSMove-icon-white.png */; };
 		E7A934A21C1713AA0004BCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A934A11C1713AA0004BCE0 /* AppDelegate.swift */; };
 		E7A934A41C1713AA0004BCE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A934A31C1713AA0004BCE0 /* ViewController.swift */; };
 		E7A934A71C1713AA0004BCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A934A51C1713AA0004BCE0 /* Main.storyboard */; };
@@ -152,6 +159,13 @@
 		E73C24E81C171AE100278093 /* BarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewController.swift; sourceTree = "<group>"; };
 		E76852BB1C27527F006B1A6F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E7946EBE1C2EE25900EB53BF /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		E7A1DB621C35F75100998A2E /* iOSMove_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOSMove_58.png; sourceTree = "<group>"; };
+		E7A1DB631C35F75100998A2E /* iOSMove_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOSMove_180.png; sourceTree = "<group>"; };
+		E7A1DB641C35F75100998A2E /* iOSMove_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOSMove_120.png; sourceTree = "<group>"; };
+		E7A1DB651C35F75100998A2E /* iOSMove_87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOSMove_87.png; sourceTree = "<group>"; };
+		E7A1DB661C35F75100998A2E /* iOSMove_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOSMove_80.png; sourceTree = "<group>"; };
+		E7A1DB671C35F75100998A2E /* iOSMove_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOSMove_60.png; sourceTree = "<group>"; };
+		E7A1DB6F1C35FBFD00998A2E /* iOSMove-icon-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOSMove-icon-white.png"; sourceTree = "<group>"; };
 		E7A9349E1C1713AA0004BCE0 /* iOSMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A934A11C1713AA0004BCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7A934A31C1713AA0004BCE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +213,20 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		E7A1DB601C35F73800998A2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7A1DB6F1C35FBFD00998A2E /* iOSMove-icon-white.png */,
+				E7A1DB621C35F75100998A2E /* iOSMove_58.png */,
+				E7A1DB631C35F75100998A2E /* iOSMove_180.png */,
+				E7A1DB641C35F75100998A2E /* iOSMove_120.png */,
+				E7A1DB651C35F75100998A2E /* iOSMove_87.png */,
+				E7A1DB661C35F75100998A2E /* iOSMove_80.png */,
+				E7A1DB671C35F75100998A2E /* iOSMove_60.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		E7A934951C1713AA0004BCE0 = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +250,7 @@
 		E7A934A01C1713AA0004BCE0 /* iOSMove */ = {
 			isa = PBXGroup;
 			children = (
+				E7A1DB601C35F73800998A2E /* Supporting Files */,
 				E70BA3B01C1CDA6300D8D2FB /* Model */,
 				E7A934A11C1713AA0004BCE0 /* AppDelegate.swift */,
 				E7A934A31C1713AA0004BCE0 /* ViewController.swift */,
@@ -422,9 +451,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7A934AF1C1713AA0004BCE0 /* LaunchScreen.storyboard in Resources */,
+				E7A1DB6B1C35F75100998A2E /* iOSMove_87.png in Resources */,
 				E7A934AC1C1713AA0004BCE0 /* Assets.xcassets in Resources */,
+				E7A1DB701C35FBFD00998A2E /* iOSMove-icon-white.png in Resources */,
 				E7A934A71C1713AA0004BCE0 /* Main.storyboard in Resources */,
+				E7A1DB6D1C35F75100998A2E /* iOSMove_60.png in Resources */,
+				E7A1DB6A1C35F75100998A2E /* iOSMove_120.png in Resources */,
 				E72F86661C28AB0600F506D9 /* user.plist in Resources */,
+				E7A1DB691C35F75100998A2E /* iOSMove_180.png in Resources */,
+				E7A1DB6C1C35F75100998A2E /* iOSMove_80.png in Resources */,
+				E7A1DB681C35F75100998A2E /* iOSMove_58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
