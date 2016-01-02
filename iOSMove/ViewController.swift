@@ -32,9 +32,8 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         refreshConf()
         ViewController.timer.invalidate()
-        ViewController.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self,
-            selector: "work", userInfo: nil, repeats: true)
-        refreshConf()
+        ViewController.timer = NSTimer.scheduledTimerWithTimeInterval(0.1,
+            target: self,selector: "work", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,19 +90,11 @@ class ViewController: UIViewController {
         let bundle = url!.URLByAppendingPathComponent("user.plist").absoluteString
         return bundle
     }
-    
-    override func shouldAutorotate() -> Bool {
-        if(self.isKindOfClass(DashboardViewController)){
-            return false
-        } else {
-            return true
-        }
-    }
 
     func work(){
         if let datum = ViewController.manager.accelerometerData?.acceleration {
             if Int(clock) == confInterval {
-                var a = Acceleration()
+                let a = Acceleration()
                 a.setting(datum.x, y: datum.y, z: datum.z)
                 if(confEmission){db.emit(a, url: confHost)}
                 db.persite(a)
@@ -115,12 +106,3 @@ class ViewController: UIViewController {
     }
 }
 
-extension UITabBarController {
-    
-    public override func shouldAutorotate() -> Bool {
-        if let selected = selectedViewController {
-            return selected.shouldAutorotate()
-        }
-        return super.shouldAutorotate()
-    }
-}

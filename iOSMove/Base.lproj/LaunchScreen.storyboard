@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,26 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iOSMove-icon-white.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z92-KF-Lvs">
-                                <rect key="frame" x="70" y="225" width="460" height="150"/>
+                                <rect key="frame" x="150" y="202.5" width="300" height="195"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="sDh-2z-bO0"/>
+                                    <constraint firstAttribute="width" constant="300" id="Ie3-8z-tZ0"/>
+                                    <constraint firstAttribute="height" constant="195" id="kx5-3B-gAa"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.74117647060000003" green="0.79607843140000001" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Z92-KF-Lvs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="iIT-6c-Nzn"/>
-                            <constraint firstItem="Z92-KF-Lvs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="m44-2u-RGo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Z92-KF-Lvs" secondAttribute="trailing" constant="50" id="y4h-cx-loi"/>
-                            <constraint firstItem="Z92-KF-Lvs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="y8j-Z1-FpF"/>
-                            <constraint firstItem="Z92-KF-Lvs" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="50" id="yUu-QA-KqG"/>
+                            <constraint firstItem="Z92-KF-Lvs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MSg-kL-GzR"/>
+                            <constraint firstItem="Z92-KF-Lvs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="SsV-hY-guG"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="m44-2u-RGo"/>
-                                <exclude reference="y8j-Z1-FpF"/>
-                            </mask>
-                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

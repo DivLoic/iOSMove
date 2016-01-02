@@ -15,9 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     static var realm: Realm!
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:
+            UIColor(red: 0.518, green: 0.600, blue: 0.243, alpha: 1.00)]
         //Realm.deleteAll(Realm.getInstance()) //   getContext())
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used

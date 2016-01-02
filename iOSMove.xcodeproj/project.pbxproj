@@ -13,6 +13,7 @@
 		E70BA3B21C1CDA8900D8D2FB /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3B11C1CDA8900D8D2FB /* Acceleration.swift */; };
 		E70BA3B41C1CDAC900D8D2FB /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BA3B31C1CDAC900D8D2FB /* Measure.swift */; };
 		E72F86661C28AB0600F506D9 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = E72F86651C28AB0600F506D9 /* user.plist */; };
+		E737C8841C3819F500EC50F7 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = E737C8831C3819F500EC50F7 /* Container.swift */; };
 		E73C24E91C171AE100278093 /* BarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73C24E81C171AE100278093 /* BarViewController.swift */; };
 		E76852BC1C27527F006B1A6F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76852BB1C27527F006B1A6F /* SettingsViewController.swift */; };
 		E7946EBF1C2EE25900EB53BF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7946EBE1C2EE25900EB53BF /* DashboardViewController.swift */; };
@@ -156,6 +157,7 @@
 		E70BA3B11C1CDA8900D8D2FB /* Acceleration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acceleration.swift; sourceTree = "<group>"; };
 		E70BA3B31C1CDAC900D8D2FB /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		E72F86651C28AB0600F506D9 /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
+		E737C8831C3819F500EC50F7 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		E73C24E81C171AE100278093 /* BarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewController.swift; sourceTree = "<group>"; };
 		E76852BB1C27527F006B1A6F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E7946EBE1C2EE25900EB53BF /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				6F147BCD1C205E5E00867617 /* LineViewController.swift */,
 				E76852BB1C27527F006B1A6F /* SettingsViewController.swift */,
 				E7946EBE1C2EE25900EB53BF /* DashboardViewController.swift */,
+				E737C8831C3819F500EC50F7 /* Container.swift */,
 			);
 			path = iOSMove;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				E70BA3AE1C1CD5BA00D8D2FB /* MotionPersister.swift in Sources */,
 				E73C24E91C171AE100278093 /* BarViewController.swift in Sources */,
 				E7A934A21C1713AA0004BCE0 /* AppDelegate.swift in Sources */,
+				E737C8841C3819F500EC50F7 /* Container.swift in Sources */,
 				E76852BC1C27527F006B1A6F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

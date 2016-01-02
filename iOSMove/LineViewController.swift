@@ -55,16 +55,13 @@ class LineViewController: ViewController,ChartViewDelegate{
         super.work()
         if Int(self.clock) == confInterval {
             printValues()
-            self.clock = 0.0
-        }else{
-            self.clock += 0.1
         }
     }
     
     func printValues(){
         var axis: [Double] = []
         
-        let records = db.last(Acceleration.self, num: 5)
+        let records = db.last(Acceleration.self, num: 5).reverse()
         records.forEach { (r: Object) -> () in
             let acc = r as! Acceleration
             if (confAxis == "X"){

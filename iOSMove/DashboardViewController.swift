@@ -30,7 +30,6 @@ class DashboardViewController : ViewController, ChartViewDelegate{
     let backGround: UIColor = UIColor.whiteColor()
     var vcgreen =  UIColor(red: 0.518, green: 0.600, blue: 0.243, alpha: 1.00)
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         numberOfRecords.textColor = vcgreen
@@ -39,6 +38,11 @@ class DashboardViewController : ViewController, ChartViewDelegate{
         bubleDraw()
         displayRecordsCount()
         displayBattery()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        device.setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
+        super.viewDidAppear(animated)
     }
     
     // display the total count of Acc

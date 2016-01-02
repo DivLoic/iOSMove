@@ -25,9 +25,13 @@ class MotionPersister {
     // Retrieve 5 last measures for line chart
     func last(model: Object.Type, num: Int) -> [Object]{
         let selected = AppDelegate.realm.objects(model).sorted("datetime", ascending: false)
-        let slice = selected.dropLast(selected.count - num)
-        return slice.flatMap { (line: Object) -> Object in
-            return line
+        if selected.count <= num{
+            return [Object]()
+        } else {
+            let slice = selected.dropLast(selected.count - num)
+            return slice.flatMap { (line: Object) -> Object in
+                return line
+            }
         }
     }
     
