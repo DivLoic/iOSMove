@@ -49,6 +49,10 @@ class ViewController: UIViewController {
         confHost = self.confBundle["host"] as! String
         confAxis = self.confBundle["axis"] as! String
     }
+    
+    func ceilForDisplay(figures: Double) -> Double{
+        return abs(round(100*figures)/100)
+    }
 
     static func mainBundle()-> NSDictionary{
         var dico = NSDictionary()
@@ -87,6 +91,14 @@ class ViewController: UIViewController {
         let bundle = url!.URLByAppendingPathComponent("user.plist").absoluteString
         return bundle
     }
+    
+    override func shouldAutorotate() -> Bool {
+        if(self.isKindOfClass(DashboardViewController)){
+            return false
+        } else {
+            return true
+        }
+    }
 
     func work(){
         if let datum = ViewController.manager.accelerometerData?.acceleration {
@@ -99,20 +111,16 @@ class ViewController: UIViewController {
             } else {
                 clock += 0.1
             }
-        }else{
-            //TODO : only for simulator
-            var a = Acceleration()
-            a.setting(1.0, y: 2.0, z: 3.0)
-            db.persite(a)
-            var b = Acceleration()
-            b.setting(5.0, y: 1.0, z: 8.0)
-            db.persite(b)
-            var c = Acceleration()
-            c.setting(9.5, y: 1.0, z: 8.0)
-            db.persite(c)
-            var d = Acceleration()
-            d.setting(7.3, y: 1.0, z: 8.0)
-            //db.persite(d)
         }
+    }
+}
+
+extension UITabBarController {
+    
+    public override func shouldAutorotate() -> Bool {
+        if let selected = selectedViewController {
+            return selected.shouldAutorotate()
+        }
+        return super.shouldAutorotate()
     }
 }

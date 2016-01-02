@@ -68,10 +68,6 @@ class BarViewController: ViewController, ChartViewDelegate{
         reDraw(0.1, y: 0.5, z: 0.2)
     }
 
-    func ceilForDisplay(figures: Double) -> Double{
-        return abs(round(100*figures)/100)
-    }
-
     override func work() {
         super.work()
         if let datum = ViewController.manager.accelerometerData?.acceleration {
