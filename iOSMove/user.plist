@@ -5,7 +5,7 @@
 	<key>axis</key>
 	<string>X</string>
 	<key>host</key>
-	<string>http://ns370799.ip-91-121-193.eu:8083/mobile</string>
+	<string>http://iosmove-isepdev.rhcloud.com/mobile</string>
 	<key>emission</key>
 	<true/>
 	<key>interval</key>

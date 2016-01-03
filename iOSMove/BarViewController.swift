@@ -15,12 +15,8 @@ class BarViewController: ViewController, ChartViewDelegate{
 
     // Outlet
     @IBOutlet weak var canvas: BarChartView!
-
-    //var manager : CMMotionManager = CMMotionManager()
-    
-
     let backGround: UIColor = UIColor.whiteColor()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initChart()

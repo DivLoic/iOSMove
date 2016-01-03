@@ -31,6 +31,7 @@ class DashboardViewController : ViewController, ChartViewDelegate{
     var vcgreen =  UIColor(red: 0.518, green: 0.600, blue: 0.243, alpha: 1.00)
     
     override func viewDidLoad() {
+        device.setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
         super.viewDidLoad()
         numberOfRecords.textColor = vcgreen
         device.batteryMonitoringEnabled = true
@@ -41,8 +42,8 @@ class DashboardViewController : ViewController, ChartViewDelegate{
     }
     
     override func viewDidAppear(animated: Bool) {
-        device.setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
         super.viewDidAppear(animated)
+        device.setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
     }
     
     // display the total count of Acc
@@ -66,12 +67,12 @@ class DashboardViewController : ViewController, ChartViewDelegate{
 
     
     func bubleDraw() {
-        
+        let pointnb = 7
         var allX = [Double]()
-        var tableX = [BubbleChartDataEntry]()
-        var tableY = [BubbleChartDataEntry]()
-        var tableZ = [BubbleChartDataEntry]()
-        let lastAcc = db.last(Acceleration.self, num: 7).reverse()
+        var tableX = [BubbleChartDataEntry(xIndex: pointnb, value: 1.0, size: CGFloat(1.0))]
+        var tableY = [BubbleChartDataEntry(xIndex: pointnb, value: 3.0, size: CGFloat(1.0))]
+        var tableZ = [BubbleChartDataEntry(xIndex: pointnb, value: 5.0, size: CGFloat(1.0))]
+        let lastAcc = db.last(Acceleration.self, num: pointnb).reverse()
         
         for(idx, obj) in lastAcc.enumerate(){
             if let acc = obj as? Acceleration{

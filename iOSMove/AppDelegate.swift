@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:
             UIColor(red: 0.518, green: 0.600, blue: 0.243, alpha: 1.00)]
+        /*UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:
+            UIColor(red: 0.518, green: 0.600, blue: 0.243, alpha: 1.00)],
+            forState: UIControlState.Selected)*/
         //Realm.deleteAll(Realm.getInstance()) //   getContext())
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used

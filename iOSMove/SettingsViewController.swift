@@ -110,10 +110,4 @@ class SettingsViewController: ViewController, UITextFieldDelegate{
         onOff.onTintColor = UIColor(red: 0.741, green: 0.796, blue: 0.541, alpha: 1.00)
     }
     
-    override func work() {
-        super.work()
-        //print("SettingViewController")
-    }
-    
-    
 }

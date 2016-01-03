@@ -10,7 +10,7 @@ import Foundation
 import Charts
 import RealmSwift
 
-class LineViewController: ViewController,ChartViewDelegate{
+class LineViewController: ViewController, ChartViewDelegate{
     
     @IBOutlet weak var canvas: LineChartView!
     let backGround: UIColor = UIColor.whiteColor()
@@ -18,6 +18,7 @@ class LineViewController: ViewController,ChartViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        canvas.delegate = self
         setChart()
     }
     
