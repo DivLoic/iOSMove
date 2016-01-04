@@ -13,8 +13,17 @@ extension UITabBarController {
     
     public override func shouldAutorotate() -> Bool {
         if let selected = selectedViewController {
-            return !selected.isKindOfClass(DashboardViewController)
+            if(selected.isKindOfClass(DashboardViewController)){
+                if(UIDevice.currentDevice().orientation.isLandscape){
+                    return false
+                } else {
+                    return true
+                }
+            } else {
+                return true
+            }
+        } else {
+            return super.shouldAutorotate()
         }
-        return super.shouldAutorotate()
     }
 }

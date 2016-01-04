@@ -41,7 +41,11 @@ class MotionPersister {
         mirror.children.forEach({(label: String?, value: Any) -> () in
             let optval = String(value)
             if let key = label {
+                if ["x","y","z"].contains(key){
+                    dict[key] = "\(abs(round(100*Double(optval)!)/100))"
+                } else {
                     dict[key] = optval
+                }
             }
         })
         return JSON(dict)
