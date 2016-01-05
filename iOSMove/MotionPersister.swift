@@ -42,7 +42,7 @@ class MotionPersister {
             let optval = String(value)
             if let key = label {
                 if ["x","y","z"].contains(key){
-                    dict[key] = "\(abs(round(100*Double(optval)!)/100))"
+                    dict[key] = "\((round(100*Double(optval)!)/100))"
                 } else {
                     dict[key] = optval
                 }
