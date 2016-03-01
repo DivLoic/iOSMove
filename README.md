@@ -1,5 +1,5 @@
 # iOSMove
-##### [II.3510] Mobile development project (Team 5)
+##### [II.3510] :iphone: Mobile development project (Team 5)
 
 Prerequisites
 -------------
@@ -19,7 +19,7 @@ See [cocoapods repo](https://github.com/CocoaPods/CocoaPods)
 Installation
 ------------
 
-1. fork it
+1. Fork it
 2. Go in the project folder & run `$ pod install`
 3. From the finder open the *iOSMove.xcodeproj* file
 
